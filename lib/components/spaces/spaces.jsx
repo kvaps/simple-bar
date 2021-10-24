@@ -32,6 +32,7 @@ export const Component = ({ spaces, windows, SIP, displayIndex }) => {
         {spaces.map((space, i) => {
           const { label, index } = space
           const lastOfSpace = i !== 0 && space.display !== spaces[i - 1].display
+          space.label = label?.length ? label : (i+1).toString()
           return (
             <Space
               key={label?.length ? label : index}
